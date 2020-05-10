@@ -7,8 +7,6 @@ import line_notify as ln
 import pandas as pd
 from datetime import datetime
 
-csv_path = r'/Users/eddietseng1129/Desktop/stock/stock_data.csv'
-
 # save stock price
 # if not os.path.exists(csv_path):
 # 	stock_price = {'Name': ['MSFT', 'DIS', 'TSM', 'TWTR', 'XOP', 'T'], 
@@ -19,8 +17,14 @@ csv_path = r'/Users/eddietseng1129/Desktop/stock/stock_data.csv'
 # else:
 # 	df = pd.read_csv(csv_path)
 
+###### Please create your own stock information ######
+csv_path = r'stock_data.csv'
+
 df = pd.read_csv(csv_path)
 stocks = df['Name'].values
+
+UPPER = 5
+LOWER = -5
 	
 ###### main ######
 while True:
@@ -34,7 +38,8 @@ while True:
 		percent = round(diff / cost * 100, 2)
 		today_percent = round(today_diff / openPrice * 100, 2)
 		# Today's open price
-		if today_percent >= 5 or today_percent <= -5:
+		# If it is up for UPPER percent or down for LOWER percnt
+		if today_percent >= UPPER or today_percent <= LOWER:
 			message = ('\n' + str(name) + "\n Today's Opening Price: " + str(openPrice) + 
 					   "\n Current Price: " + str(price) + "\n Difference: " + str(today_diff) + 
 					   ' (' + str(today_percent) + '%)' + "\n Shares: " + str(share) +
@@ -42,13 +47,15 @@ while True:
 					   ' (' + str(percent) + '%)')
 			print('Sending ' + str(name) + ' information...')
 			ln.lineNotifyMessage(token, message)
-
+		
+		###### Comparing for total return ######
 		# Total Returns
-		# if percent >= 10: # or percent <= -10:
+		# if percent >= UPPER: # or percent <= LOWER:
 		# 	message = ('\n' + str(name) + "\n Shares: " + str(share) + 
 		# 			   "\n Cost: " + str(cost) + "\n Current Value: " + str(price) + 
 		# 			   "\n Return: " + str(diff * share) + ' (' + str(percent) + '%)')
 		# 	print('Sending ' + str(name) + ' information...')
 		# 	ln.lineNotifyMessage(token, message)
+		
 	# run every 60 sec
 	time.sleep(60)
