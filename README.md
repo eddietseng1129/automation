@@ -8,4 +8,4 @@
 
 ## Projects
 
-* [AutoMeet](https://github.com/eddietseng1129/automation/tree/master/auto_reply) - Scripts for open [KnockTalk](https://knock.tw/) and find the person you want to talk automatically.
+* [AutoMeet](https://github.com/eddietseng1129/automation/tree/master/auto_reply) - Scripts for opening [KnockTalk](https://knock.tw/) and finding the person you want to talk automatically.
