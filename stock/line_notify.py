@@ -1,5 +1,9 @@
 import requests
 
+"""
+Create your own token from: https://notify-bot.line.me/en/
+Save it to token.txt or just set token variable to the string value
+"""
 token = open("token.txt", "r").read()
 
 # LINE PUSH
