@@ -1,6 +1,6 @@
 # Automation
 
-### This folder contains small projects help the users deal with some trivial tasks
+### These folders contain small projects help the users deal with some trivial tasks
 
 ## Built With
 
