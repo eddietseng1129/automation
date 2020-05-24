@@ -4,7 +4,7 @@
 
 ## Built With
 
-* [Pyhton](https://www.python.org) - A popular programming language
+* [Python](https://www.python.org) - A popular programming language
 
 ## Projects
 
